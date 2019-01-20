@@ -26,11 +26,11 @@ This website consist of a root HTML document and JavaScript (React) code to gene
 
 ### A responsive grid
 
-`<SummingGrid/>` keeps track of the values on each input, and calculates their sum every time any input changes. The component has been styled with the CSS `display: grid;` property, including media queries to modify its column/row composition according to the screen width.
+`<SummingGrid/>` keeps track of the values on each input, and calculates their sum every time any input changes. The component has been styled with the CSS `display: grid` property, including media queries to modify its column/row composition according to the screen width.
 
 ### Validation
 
-`<ValidInput/>` is a react component that accepts a validator function as a prop. Each time its inner state changes, the component will execute the validation function `this.props.validator(value, inputId)`, passing it the new value and an identifier.
+`<ValidInput/>` is a react component that accepts a prop function for input validation. Each time its inner state changes, the component will execute the validation function `this.props.validator(value, inputId)`, passing it the new value and an identifier.
 
 `<SummingGrid/>` holds the validation logic and delegates its execution to `<ValidInput/>`, as well as the ensuing updates to the global state of the grid.
 
