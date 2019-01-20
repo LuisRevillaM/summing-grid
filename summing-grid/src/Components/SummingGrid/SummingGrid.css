@@ -1,0 +1,30 @@
+.SummingGrid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 100%;
+  width: 100%;
+  height: 100vh;
+}
+
+.box {
+  border: solid 1px black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 720px) {
+  .App {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .App {
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+}
