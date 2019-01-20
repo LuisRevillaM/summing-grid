@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ValidInput from "../ValidInput";
 import "./SummingGrid.css";
-import formatNumber from "../../formatNumber.js";
+import formatNumber from "./formatNumber.js";
 
 class SummingGrid extends Component {
   state = (() => {
@@ -50,7 +50,6 @@ class SummingGrid extends Component {
     }, 0);
   };
 
-  onNumber = (n, id) => {};
   render() {
     let sum = this.sumState();
     let result = formatNumber(sum);
