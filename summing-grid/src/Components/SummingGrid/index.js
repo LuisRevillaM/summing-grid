@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ValidInput from "../ValidInput";
 import "./SummingGrid.css";
-import formatNumber from "../../formatNumber.js";
+import formatNumber from "./formatNumber.js";
 
 class SummingGrid extends Component {
   state = {
@@ -37,25 +37,23 @@ class SummingGrid extends Component {
     let sum = this.sumState();
     let result = formatNumber(sum);
     return (
-      <div>
-        <div className="SummingGrid">
-          <ValidInput
-            id="first"
-            className="box"
-            validator={this.validateNumber}
-          />
-          <ValidInput
-            id="second"
-            className="box"
-            validator={this.validateNumber}
-          />
-          <ValidInput
-            id="third"
-            className="box"
-            validator={this.validateNumber}
-          />
-          <div className="box">{result}</div>
-        </div>
+      <div className="SummingGrid">
+        <ValidInput
+          id="first"
+          className="box"
+          validator={this.validateNumber}
+        />
+        <ValidInput
+          id="second"
+          className="box"
+          validator={this.validateNumber}
+        />
+        <ValidInput
+          id="third"
+          className="box"
+          validator={this.validateNumber}
+        />
+        <div className="box">{result}</div>
       </div>
     );
   }
