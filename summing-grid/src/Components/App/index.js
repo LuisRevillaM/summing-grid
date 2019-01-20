@@ -2,7 +2,7 @@ import React from "react";
 import SummingGrid from "../SummingGrid";
 
 const App = () => {
-  return <SummingGrid boxes={3} />;
+  return <SummingGrid />;
 };
 
 export default App;

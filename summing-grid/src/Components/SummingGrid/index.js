@@ -4,27 +4,10 @@ import "./SummingGrid.css";
 import formatNumber from "../../formatNumber.js";
 
 class SummingGrid extends Component {
-  state = (() => {
-    let initialState = {};
-    for (let i = 1; i <= this.props.boxes; i++) {
-      initialState[i] = 0;
-    }
-    return initialState;
-  })();
-
-  initializeGrid = () => {
-    let boxes = [];
-    for (let i = 1; i <= this.props.boxes; i++) {
-      boxes.push(
-        <ValidInput
-          key={i}
-          id={i}
-          className="box"
-          validator={this.validateNumber}
-        />
-      );
-    }
-    return boxes;
+  state = {
+    first: 0,
+    second: 0,
+    third: 0
   };
 
   validateNumber = (value, id) => {
@@ -50,14 +33,27 @@ class SummingGrid extends Component {
     }, 0);
   };
 
-  onNumber = (n, id) => {};
   render() {
     let sum = this.sumState();
     let result = formatNumber(sum);
     return (
       <div>
         <div className="SummingGrid">
-          {this.initializeGrid()}
+          <ValidInput
+            id="first"
+            className="box"
+            validator={this.validateNumber}
+          />
+          <ValidInput
+            id="second"
+            className="box"
+            validator={this.validateNumber}
+          />
+          <ValidInput
+            id="third"
+            className="box"
+            validator={this.validateNumber}
+          />
           <div className="box">{result}</div>
         </div>
       </div>
