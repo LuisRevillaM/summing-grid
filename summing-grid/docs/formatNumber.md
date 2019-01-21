@@ -43,7 +43,7 @@ If the integer part of the measure has only one digit, then we round its fractio
 
 ### Moving the decimal point
 
-Now, we must check for the conditions above to know how many decimals to keep when rounding the measure. How do we keep a decimal after rounding? `Math.round(4.762)` will return `5` no matter how many digits it has right to the decimal point. So, to round `4.762` down to one decimal, we could:
+Now, we must check for the conditions above to know how many decimals to keep when rounding the measure. How do we keep a decimal after rounding? `Math.round(4.762)` will return `5` no matter how many digits it has right of the decimal point. So, to round `4.762` down to one decimal, we could:
 
 - move the decimal point one digit to the right (by multiplying by ten).
 - then round that result, to get the nearest integer.
