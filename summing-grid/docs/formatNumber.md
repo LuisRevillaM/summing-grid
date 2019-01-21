@@ -69,7 +69,7 @@ This rounding process has an edge case: our program will take a resulting measur
 
 If we were working with Ks (thousands), the result would be `1000 Ks`, which should be expressed as `1 M`.
 
-To address this, we perform this check at after rounding the measure:
+To address this, we perform this check after rounding the measure:
 
 ```javascript
 if (rounded === 1000 && i < units.length - 1) {
