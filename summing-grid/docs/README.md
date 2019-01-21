@@ -21,15 +21,16 @@ class SummingGrid extends Component {
     third: 0
   };
 
-  //this fn validates new values and updates the piece
-  //of state corresponding to the input field
-  validateNumber = (value, id) => {
+  //returns a fn to validate and call
+  //an updater fn passed as argument 
+  validateNumber = (updater)=>{
+    return (value,id)=>{
     //implementation details
-
-    //update state after validation
-    this.updateState();
-  };
-
+    //call updater fn after validation
+    updater(value,id);
+    }
+  }
+  
   updateState = (number, id) => {
     //implementation details
   };
@@ -37,9 +38,9 @@ class SummingGrid extends Component {
   render() {
     return (
       <div className="SummingGrid">
-        <InputValidator id="first" validator={this.validateNumber} />
-        <InputValidator id="second" validator={this.validateNumber} />
-        <InputValidator id="third" validator={this.validateNumber} />
+        <InputValidator id="first" validator={this.validateNumber(this.updateState)} />
+        <InputValidator id="second" validator={this.validateNumber(this.updateState)} />
+        <InputValidator id="third" validator={this.validateNumber(this.updateState)} />
         <div>{result}</div>
       </div>
     );
