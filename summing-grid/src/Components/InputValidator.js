@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ValidInput extends Component {
+class InputValidator extends Component {
   state = {
     input: ""
   };
@@ -24,4 +24,4 @@ class ValidInput extends Component {
   }
 }
 
-export default ValidInput;
+export default InputValidator;
