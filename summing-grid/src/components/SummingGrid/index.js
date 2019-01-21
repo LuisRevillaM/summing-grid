@@ -10,14 +10,20 @@ class SummingGrid extends Component {
     third: 0
   };
 
-  validateNumber = (value, id) => {
-    let number;
-    if (/^[\d]+$/g.test(value)) {
-      number = parseInt(value, 10);
-    } else {
-      number = 0;
-    }
-    this.updateState(number, id);
+  isNumberString(str) {
+    return /^[\d]+$/g.test(str);
+  }
+
+  validateNumber = updater => {
+    return (value, id) => {
+      let number;
+      if (this.isNumberString(value)) {
+        number = parseInt(value, 10);
+      } else {
+        number = 0;
+      }
+      updater(number, id);
+    };
   };
 
   updateState = (number, id) => {
@@ -27,31 +33,31 @@ class SummingGrid extends Component {
     });
   };
 
-  sumState = () => {
-    return Object.keys(this.state).reduce((acc, v) => {
-      return (acc = this.state[v] + acc);
+  sumState = state => {
+    return Object.keys(state).reduce((acc, v) => {
+      return (acc = state[v] + acc);
     }, 0);
   };
 
   render() {
-    let sum = this.sumState();
+    let sum = this.sumState(this.state);
     let result = formatNumber(sum);
     return (
       <div className="SummingGrid">
         <InputValidator
           id="first"
           className="box"
-          validator={this.validateNumber}
+          validator={this.validateNumber(this.updateState)}
         />
         <InputValidator
           id="second"
           className="box"
-          validator={this.validateNumber}
+          validator={this.validateNumber(this.updateState)}
         />
         <InputValidator
           id="third"
           className="box"
-          validator={this.validateNumber}
+          validator={this.validateNumber(this.updateState)}
         />
         <div className="box">{result}</div>
       </div>

@@ -20,6 +20,14 @@ Then you can start the development server with
 npm start
 ```
 
+## Testing
+
+from the `/summing-grid directory` run:
+
+```sh
+npm run test
+```
+
 ## Documentation
 
 This website consist of a root HTML document and JavaScript (React) code to generate the view layer. It's been bootstrapped with [Create React App](https://github.com/facebook/create-react-app). See the [docs](https://github.com/LuisRevillaM/summing-grid/tree/master/summing-grid/docs) for implementation details on the component structure, input validation and output formatting process.
