@@ -30,9 +30,9 @@ This website consist of a root HTML document and JavaScript (React) code to gene
 
 ### Validation
 
-`<ValidInput/>` is a react component that accepts a prop function for input validation. Each time its inner state changes, the component will execute the validation function `this.props.validator(value, inputId)`, passing it the new value and an identifier.
+`<InputValidator/>` is a react component that accepts a prop function for input validation. Each time its inner state changes, the component will execute the validation function `this.props.validator(value, inputId)`, passing it the new value and an identifier.
 
-`<SummingGrid/>` holds the validation logic and delegates its execution to `<ValidInput/>`, as well as the ensuing updates to the global state of the grid.
+`<SummingGrid/>` holds the validation logic and delegates its execution to `<InputValidator/>`, as well as the ensuing updates to the global state of the grid.
 
 Any input that's not a sequence of integers [0-9] will count as zero to `<SummingGrid/>`
 

@@ -7,6 +7,7 @@
 - [The validation function](#Validation)
 - [Output format](#Output)
 - [Responsive grid](#Grid)
+- [Generic grid](#Generic)
 
 ## <a name="SummingGrid">`SummingGrid`</a>
 
@@ -48,7 +49,7 @@ class SummingGrid extends Component {
 
 ## <a name="InputValidator">`InputValidator`</a>
 
-`<InputValidator/>` is a react component that holds its own inner state and handles its changes. With every change, however, it executes a function it receives as a prop, named `this.props.validator`. This way the component delegates to its parent the input validation criteria as well as its side-effects.
+`<InputValidator/>` is a react component that holds its own inner state and handles its changes. With every change, however, it executes a function received as a prop, named `this.props.validator`. This way the component delegates to its parent the input validation criteria as well as its side-effects.
 
 ```javascript
 class InputValidator extends Component {
@@ -134,4 +135,18 @@ To give the grid different layouts with different screen widths, we rely on CSS 
     grid-template-rows: auto auto auto auto;
   }
 }
+```
+
+## <a name="Generic">Generic grid</a>
+
+The component GenericSummingGrid implements a generalized version of our summing grid. It takes a `boxes` integer number as prop, to determine the number of inputs the grid should have. To be used, `GenericSummingGrid` must be imported to and rendered by the `App` component.
+
+```javascript
+//from src/Components/App/index.js
+import GenericSummingGrid from "../GenericSummingGrid";
+
+const App = () => {
+  //boxes prop sets number of inputs
+  return <GenericSummingGrid boxes={2} />;
+};
 ```

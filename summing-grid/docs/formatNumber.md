@@ -10,11 +10,12 @@ const units = ["K", "M", "B", "T"];
 for (let i = units.length - 1; i >= 0; i--) {
   //map the index to its correspondent unit in the array
   const unitSize = Math.pow(10, (i + 1) * 3);
+
   //if the number is greater or equal than the current unitSize
-  //it should be measured in the current unitSize
   if (number >= unitSize) {
-    //here goes code to measure number with current
-    //unitSize and then break the loop
+    //it should be measured in the current unitSize
+    //here goes code to do it
+    //then break the loop
     break;
   }
 }
@@ -42,19 +43,11 @@ If the integer part of the measure has only one digit, then we round its fractio
 
 ### Moving the decimal point
 
-Now, we must check for the conditions above to know how many decimals to keep when rounding the measure. How do we keep a decimal after rounding? `Math.round(4.762)` will return `5` no matter how many digits it has right to the decimal point. It's decimal part rounds to `1` integer. To round `4.762` down to one decimal, we could:
+Now, we must check for the conditions above to know how many decimals to keep when rounding the measure. How do we keep a decimal after rounding? `Math.round(4.762)` will return `5` no matter how many digits it has right to the decimal point. So, to round `4.762` down to one decimal, we could:
 
 - move the decimal point one digit to the right (by multiplying by ten).
 - then round that result, to get the nearest integer.
 - and divide by ten again, to move the decimal point one spot back to the left.
-
-This is what the function `roundToDecimals` does. It takes a number and the number of decimals
-
-```javascript
-const number = 4.762;
-//number times ten, rounded, is 48.
-// we divide again to 'move de decimal point 'get 4.8
-```
 
 This is what `roundToDecimals` does. It takes a `number` to round and a `decPlaces` integer, for the number of digits we want to keep right to decimal point.
 
