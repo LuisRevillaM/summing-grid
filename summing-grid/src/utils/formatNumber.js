@@ -26,8 +26,9 @@ const formatNumber = number => {
       }
 
       rounded = roundToDecimals(measure, decPlaces);
-      if (rounded === 1000 && i < unitSize.length - 1) {
+      if (rounded === 1000 && i < units.length - 1) {
         rounded = 1;
+        console.log("here");
         i++;
       }
       rounded += units[i];

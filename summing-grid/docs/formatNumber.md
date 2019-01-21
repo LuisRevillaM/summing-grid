@@ -72,7 +72,7 @@ If we were working with Ks (thousands), the result would be `1000 Ks`, which sho
 To address this, we perform this check at after rounding the measure:
 
 ```javascript
-if (rounded === 1000 && i < unitSize.length - 1) {
+if (rounded === 1000 && i < units.length - 1) {
   //bring 1000 to 1
   rounded = 1;
   //we increment i, to reference the 'previous', larger unit in the array

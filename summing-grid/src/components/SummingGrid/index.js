@@ -10,11 +10,11 @@ class SummingGrid extends Component {
     third: 0
   };
 
-  isNumberString(str) {
+  isNumberString = str => {
     return /^[\d]+$/g.test(str);
-  }
+  };
 
-  validateNumber = updater => {
+  validateAndUpdate = updater => {
     return (value, id) => {
       let number;
       if (this.isNumberString(value)) {
@@ -47,17 +47,17 @@ class SummingGrid extends Component {
         <InputValidator
           id="first"
           className="box"
-          validator={this.validateNumber(this.updateState)}
+          validator={this.validateAndUpdate(this.updateState)}
         />
         <InputValidator
           id="second"
           className="box"
-          validator={this.validateNumber(this.updateState)}
+          validator={this.validateAndUpdate(this.updateState)}
         />
         <InputValidator
           id="third"
           className="box"
-          validator={this.validateNumber(this.updateState)}
+          validator={this.validateAndUpdate(this.updateState)}
         />
         <div className="box">{result}</div>
       </div>

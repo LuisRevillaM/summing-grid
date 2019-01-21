@@ -21,13 +21,14 @@ class SummingGrid extends Component {
     third: 0
   };
 
-  //this fn validates new values and updates the piece
-  //of state corresponding to the input field
-  validateNumber = (value, id) => {
-    //implementation details
-
-    //update state after validation
-    this.updateState();
+  //returns a fn to validate and call
+  //an updater fn passed as argument
+  validateAndUpdate = updater => {
+    return (value, id) => {
+      //implementation details
+      //call updater fn after validation
+      updater(value, id);
+    };
   };
 
   updateState = (number, id) => {
@@ -37,9 +38,18 @@ class SummingGrid extends Component {
   render() {
     return (
       <div className="SummingGrid">
-        <InputValidator id="first" validator={this.validateNumber} />
-        <InputValidator id="second" validator={this.validateNumber} />
-        <InputValidator id="third" validator={this.validateNumber} />
+        <InputValidator
+          id="first"
+          validator={this.validateAndUpdate(this.updateState)}
+        />
+        <InputValidator
+          id="second"
+          validator={this.validateAndUpdate(this.updateState)}
+        />
+        <InputValidator
+          id="third"
+          validator={this.validateAndUpdate(this.updateState)}
+        />
         <div>{result}</div>
       </div>
     );
@@ -88,14 +98,14 @@ class InputValidator extends Component {
 Every input that fails the test, will be considered zero by `<SummingGrid/>`:
 
 ```javascript
-validateNumber = (value, id) => {
+(value, id) => {
   let number;
   if (/^[\d]+$/g.test(value)) {
     number = parseInt(value, 10);
   } else {
     number = 0;
   }
-  this.updateState(number, id);
+  updater(number, id);
 };
 ```
 
