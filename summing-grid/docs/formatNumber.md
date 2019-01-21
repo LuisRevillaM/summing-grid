@@ -49,7 +49,7 @@ Now, we must check for the conditions above to know how many decimals to keep wh
 - then round that result, to get the nearest integer.
 - and divide by ten again, to move the decimal point one spot back to the left.
 
-This is what `roundToDecimals` does. It takes a `number` to round and a `decPlaces` integer, for the number of digits we want to keep right to decimal point.
+This is what `roundToDecimals` does. It takes a `number` to round and a `decPlaces` integer, for the number of digits we want to keep right of the decimal point.
 
 ```javascript
 const roundToDecimals = (number, decPlaces) => {
