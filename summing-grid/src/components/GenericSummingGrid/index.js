@@ -6,7 +6,7 @@ import formatNumber from "../../utils/formatNumber.js";
 class GenericSummingGrid extends Component {
   state = (() => {
     let initialState = {};
-    for (let i = 1; i <= this.props.boxes; i++) {
+    for (let i = 1; i <= this.props.inputs; i++) {
       initialState[i] = 0;
     }
     return initialState;
