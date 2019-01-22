@@ -50,10 +50,10 @@ The displayed sum number is rounded to its nearest 3 digit form, using Ks, Ms, B
 
 ### Variable number of inputs
 
-The component `<GenericSummingGrid/>` implements a version of the grid that takes a `boxes` prop, to control how many input fields to display. See the [docs](https://github.com/LuisRevillaM/summing-grid/tree/master/summing-grid/docs) for usage instructions.
+The component `<GenericSummingGrid/>` implements a version of the grid that takes an `inputs` prop, to control how many input fields to display. See the [docs](https://github.com/LuisRevillaM/summing-grid/tree/master/summing-grid/docs) for usage instructions.
 
 ```javascript
 const App = () => {
-  return <GenericSummingGrid boxes={7} />;
+  return <GenericSummingGrid inputs={7} />;
 };
 ```
