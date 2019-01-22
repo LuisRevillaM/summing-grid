@@ -149,7 +149,7 @@ To give the grid different layouts with different screen widths, we rely on CSS 
 
 ## <a name="Generic">Generic grid</a>
 
-The component `GenericSummingGrid` implements a generalized version of our summing grid. It takes an `inputs` integer number as prop, to determine the number of inputs the grid should have. To be used, `GenericSummingGrid` must be imported to and rendered by the `App` component.
+The component `GenericSummingGrid` implements a generalized version of our summing grid. It takes an `inputs` integer as prop, to determine the number of inputs the grid should have. To be used, `GenericSummingGrid` must be imported to and rendered by the `App` component.
 
 ```javascript
 //from src/components/App/index.js
