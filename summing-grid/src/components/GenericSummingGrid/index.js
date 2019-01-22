@@ -14,7 +14,7 @@ class GenericSummingGrid extends Component {
 
   initializeGrid = () => {
     let boxes = [];
-    for (let i = 1; i <= this.props.boxes; i++) {
+    for (let i = 1; i <= this.props.inputs; i++) {
       boxes.push(
         <InputValidator
           key={i}
